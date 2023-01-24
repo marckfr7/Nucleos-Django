@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Datos Personales</h1>
+
+{% for form in form %}
+
+<h5>Nombre: {{ form }}</h5>
+
+<h5>Carnet de identidad: {{ form.carnet_ident }}</h5>
+
+{% if form.trabaja %}
+
+<h5>Trabaja</h5>
+
+{% endif %}
+
+{% if form.estudia %}
+
+<h5>Estudia</h5>
+
+{% else %}
+
+<h5>Desempleado</h5>
+
+{% endif %}
+
+<h5>Centro que radica: {{ form.centro }}</h5>
+
+{% endfor %}
+
+{% endblock %}

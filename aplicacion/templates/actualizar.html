@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Actualizar Integrantes</h1>
+
+{% for int in int %}
+
+
+{{ int }}
+
+
+<form method="post" >
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button>
+        Actualizar
+    </button>
+</form>
+
+
+{% endfor %}
+
+{% endblock %}

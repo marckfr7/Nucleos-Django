@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Nucleos Familiares</h1>
+
+{% for nucleo in nucleo %}
+
+<ul>
+    <li>
+        <a href="{% url 'detalle' %}">
+            {{ nucleo }}
+        </a>
+    </li>
+    {{ nucleo.integrantes }}
+</ul>
+<form action="{% url 'eliminar_nucleo' nucleo.id %}" method="post">
+
+    {% csrf_token %}
+    
+    <button>
+        Eliminar Nucleo
+    </button>
+</form>
+
+{% endfor %}
+
+{% endblock %}

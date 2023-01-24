@@ -1,0 +1,23 @@
+<ul>
+    <li>
+        <a href="{% url 'home' %}">Inicio</a>
+    </li>
+</ul>
+
+
+
+<h1>Registro</h1>
+
+<h3>{{ error }}</h3>
+
+<form method="post" >
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button>
+        Guardar
+    </button>
+
+</form>

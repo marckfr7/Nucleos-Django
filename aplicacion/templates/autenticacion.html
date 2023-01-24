@@ -1,0 +1,22 @@
+<ul>
+    <li>
+        <a href="{% url 'home' %}">Inicio</a>
+    </li>
+</ul>
+
+
+<h1>Autentiquese en la app</h1>
+
+<h3>{{ error }}</h3>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button>
+        Autenticarse
+    </button>
+</form>
+
